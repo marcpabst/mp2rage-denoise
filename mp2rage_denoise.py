@@ -110,17 +110,3 @@ def mp2rage_masked(filename_uni, filename_inv2, filename_output=None, threshold=
         nib.save(image_output, filename_output)
     else:
         return image_output
-
-
-img_a = mp2rage_robust_combination( "/data/hu_mapabst/tmp/UNI.nii.gz",
-                            "/data/hu_mapabst/tmp/INV1.nii.gz",
-                            "/data/hu_mapabst/tmp/INV2.nii.gz",
-                            multiplying_factor=130)
-img_b = mp2rage_masked(     "/data/hu_mapabst/tmp/UNI.nii.gz",
-                            "/data/hu_mapabst/tmp/INV2.nii.gz",
-                            threshold="60%")
-
-plotting.plot_anat(img_a)
-plotting.plot_anat(img_b)
-
-plotting.show()
